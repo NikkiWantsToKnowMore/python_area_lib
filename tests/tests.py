@@ -1,6 +1,6 @@
 import unittest
 import math
-from area_lib import Circle, Triangle, calculate_area, Area_of_a_figure
+from area_of_a_figure_lib.area_lib import Circle, Triangle, Area_of_a_figure, calculate_area
 
 class TestAreas(unittest.TestCase):
     def test_circle_area(self):
@@ -31,7 +31,7 @@ class TestAreas(unittest.TestCase):
         self.assertAlmostEqual(areas[1], 6.0)
         
     def test_adding_new_shape(self):
-        # Добавляем класс Square, определяем вычисление площади.
+        # Наследуем абстрактный класс Area_of_a_figure, определяем вычисление площади.
         class Square(Area_of_a_figure):
             def __init__(self, side):
                 self.side = side
